@@ -135,6 +135,14 @@
   footer{background:var(--azul);color:#c9d6e2;padding:28px 0;font-size:.92rem}
   footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+  /* Clientes */
+  .clientes{padding:44px 0;background:#f5f7fa;border-top:1px solid var(--borde)}
+  .clientes .encabezado{text-align:center;margin-bottom:22px}
+  .clientes .encabezado h2{margin-bottom:6px}
+  .clientes .encabezado p{color:var(--suave)}
+  .cliente-logo{width:min(230px,70%);height:104px;margin:0 auto;background:#fff;border:1px solid var(--borde);border-radius:14px;display:flex;align-items:center;justify-content:center;padding:24px}
+  .cliente-logo img{width:100%;max-height:58px;object-fit:contain}
+
   /* WhatsApp flotante */
   .wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
   .wa[hidden]{display:none}
@@ -470,6 +478,19 @@
   </section>
 
 </main>
+
+<section class="clientes" aria-labelledby="titulo-clientes">
+  <div class="wrap">
+    <div class="encabezado">
+      <h2 id="titulo-clientes">Nuestros clientes</h2>
+      <p>Empresas que confían en nuestros servicios.</p>
+    </div>
+    <div class="cliente-logo">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DHL_Logo.svg"
+           alt="DHL" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
