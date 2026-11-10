@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suginsa | Suministros Generales e Industriales, S.A.</title>
+<meta name="description" content="Suginsa, Suministros Generales e Industriales, S.A.: suministros, instalación, reparación y mantenimiento. Trabajos seguros, protegidos y hechos para durar años.">
+<!-- BETA: borrar la línea siguiente cuando la página se publique de forma definitiva -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1b3563">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b3563'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --azul:#1b3563; --azul2:#27497f; --acento:#f2a900; --acento-osc:#b07a00; --gris:#8f8f8f;
+    --fondo:#f5f7fa; --texto:#1b2733; --suave:#5d6b79; --borde:#d5dde5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--texto);background:#fff;line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{width:min(1100px,92%);margin-inline:auto}
+  section{padding:72px 0}
+  h2{font-size:clamp(1.6rem,3.5vw,2.1rem);color:var(--azul);margin-bottom:8px}
+  .sub{color:var(--suave);margin-bottom:32px;max-width:60ch}
+
+  /* Botones */
+  .btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit}
+  .btn-acento{background:var(--acento);color:#1b1b1b}
+  .btn-acento:hover{filter:brightness(.95)}
+  .btn-borde{border-color:#fff;color:#fff}
+  .btn-borde:hover{background:rgba(255,255,255,.12)}
+
+  /* Encabezado */
+  header{position:sticky;top:0;z-index:20;background:#fff;color:var(--azul);border-bottom:1px solid var(--borde)}
+  .barra{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .marca{display:flex;align-items:center;text-decoration:none}
+  .marca img{height:56px;width:auto}
+  .marca-svg{height:60px;width:auto}
+  .marca-texto{font-weight:800;letter-spacing:.08em;font-size:1.3rem;color:var(--azul)}
+  .marca-texto small{font-weight:600;color:var(--gris);margin-left:4px;letter-spacing:.04em}
+  nav{display:flex;gap:22px;align-items:center}
+  nav a{text-decoration:none;font-size:.95rem;color:var(--azul);font-weight:600}
+  nav a:hover{color:var(--acento-osc)}
+  @media(max-width:760px){nav a.enlace{display:none}}
+
+  /* Portada */
+  .hero{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:#fff;padding:90px 0 80px}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.12;max-width:18ch;margin-bottom:18px}
+  .hero h1 span{color:var(--acento)}
+  .hero p{font-size:1.15rem;max-width:52ch;opacity:.92;margin-bottom:30px}
+  .hero .acciones{display:flex;gap:12px;flex-wrap:wrap}
+  .hero p.eyebrow{color:var(--acento);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;max-width:none;opacity:1;margin-bottom:14px}
+
+  /* Productos, por qué elegirnos, marcas */
+  .categorias{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+  .categorias .pendiente{min-height:120px}
+  .porque{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .porque .item{background:#fff;border:1px solid var(--borde);border-left:4px solid var(--acento);border-radius:10px;padding:18px 20px}
+  .porque h3{color:var(--azul);font-size:1.1rem;margin-bottom:6px}
+  .porque p{color:var(--suave);font-size:.95rem}
+  .marcas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+  .marcas .pendiente{min-height:80px}
+
+  /* Contador */
+  .contador{background:var(--azul);color:#fff;padding:36px 0;border-top:1px solid rgba(255,255,255,.12)}
+  .contador .wrap{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center}
+  .contador .numero{font-size:clamp(2.6rem,7vw,3.8rem);font-weight:800;color:var(--acento);line-height:1}
+  .contador .etiqueta{font-size:1.1rem;opacity:.92;text-align:left}
+  .contador .etiqueta strong{display:block;font-size:1.2rem}
+
+  /* Recuadros pendientes */
+  .pendiente{border:2px dashed #b8c4d0;border-radius:12px;background:#fff;color:#7b8794;min-height:110px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:.95rem;gap:4px}
+  .pendiente::before{content:"PENDIENTE";font-size:.68rem;font-weight:800;letter-spacing:.12em;color:var(--acento-osc)}
+
+  /* Servicios */
+  .fondo{background:var(--fondo)}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+  .tarjeta{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:24px}
+  .tarjeta h3{color:var(--azul);margin-bottom:12px;font-size:1.25rem}
+  .tarjeta .pendiente{min-height:90px}
+  .etiqueta-tipo{display:inline-block;font-size:.8rem;font-weight:700;color:var(--azul2);background:#e3edf6;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+
+  /* Sobre nosotros */
+  .dos{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  @media(max-width:760px){.dos{grid-template-columns:1fr}}
+  .dos .pendiente{min-height:170px}
+
+  /* Galería */
+  .galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .foto{position:relative;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--borde)}
+  .foto button{all:unset;display:block;cursor:zoom-in;width:100%}
+  .foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .foto figcaption{padding:10px 14px;font-size:.92rem;color:var(--suave)}
+  .foto figcaption strong{color:var(--azul)}
+  .foto.vacia{aspect-ratio:4/3}
+  .foto.vacia .pendiente{height:100%;border:none;border-radius:0;background:#fafbfc}
+
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(5,15,25,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:50;padding:20px;gap:12px}
+  .lightbox[hidden]{display:none}
+  .lightbox img{max-height:80vh;border-radius:8px}
+  .lightbox p{color:#fff}
+  .lightbox .cerrar{position:absolute;top:14px;right:18px;font-size:2.2rem;background:none;border:none;color:#fff;cursor:pointer;line-height:1}
+
+  /* Garantía */
+  .garantia .pendiente{min-height:130px}
+
+  /* Formulario */
+  .contacto-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:start}
+  @media(max-width:860px){.contacto-grid{grid-template-columns:1fr}}
+  form{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:26px;display:grid;gap:16px}
+  label{font-weight:600;font-size:.92rem;display:block;margin-bottom:5px}
+  input,select,textarea{width:100%;padding:11px 12px;border:1px solid #b9c4cf;border-radius:8px;font:inherit;background:#fff}
+  input:focus,select:focus,textarea:focus{outline:3px solid rgba(242,169,0,.45);border-color:var(--acento-osc)}
+  textarea{min-height:110px;resize:vertical}
+  .fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.fila{grid-template-columns:1fr}}
+  .opciones{display:flex;gap:10px;flex-wrap:wrap}
+  .opciones label{display:flex;align-items:center;gap:8px;border:1px solid #b9c4cf;border-radius:8px;padding:10px 14px;cursor:pointer;margin:0;font-weight:500}
+  .opciones input{width:auto}
+  .trampa{position:absolute;left:-9999px;height:0;overflow:hidden}
+  #mensaje{font-weight:600;min-height:1.4em}
+  #mensaje.ok{color:#17803d}
+  #mensaje.error{color:#b42318}
+  #mensaje.aviso{color:var(--acento-osc)}
+  .datos{display:grid;gap:12px}
+  .dato{border:1px solid var(--borde);border-radius:12px;padding:14px 16px;background:#fff}
+  .dato b{display:block;font-size:.8rem;color:var(--suave);text-transform:uppercase;letter-spacing:.06em}
+  .dato.vacio{border:2px dashed #b8c4d0;color:#7b8794}
+  .dato.vacio span::after{content:" · pendiente";color:var(--acento-osc);font-weight:700}
+
+  /* Pie */
+  footer{background:var(--azul);color:#c9d6e2;padding:28px 0;font-size:.92rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  /* WhatsApp flotante */
+  .wa{position:fixed;right:18px;bottom:18px;z-index:30;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .wa[hidden]{display:none}
+
+  /* ============ RETOQUES ============ */
+  html{scroll-padding-top:84px}
+  :focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+  .btn{transition:transform .15s ease,filter .15s ease,background .2s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .tarjeta,.porque .item,.foto{transition:transform .25s ease,box-shadow .25s ease}
+  .tarjeta:hover,.porque .item:hover,.foto:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(27,53,99,.13)}
+  header{transition:box-shadow .3s ease}
+  header.scrolled{box-shadow:0 4px 20px rgba(27,53,99,.14)}
+  .hero{position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
+  .hero::after{content:"";position:absolute;right:-140px;top:-140px;width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle,rgba(242,169,0,.26),transparent 65%)}
+  .hero .wrap{position:relative;z-index:1}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visto{opacity:1;transform:none}
+
+  /* ============ ANIMACIÓN DE CONSTRUCCIÓN (scroll) ============ */
+  .build{height:480vh;padding:0;position:relative;color:#fff;background:linear-gradient(180deg,#0d1d3a 0%,#152b52 100%)}
+  .build .stage{position:sticky;top:76px;height:calc(100vh - 76px);height:calc(100dvh - 76px);display:flex;align-items:center;overflow:hidden}
+  .build .stage-in{display:grid;grid-template-columns:minmax(260px,.8fr) 1.5fr;gap:32px;align-items:center}
+  .build .escena-svg{width:100%;height:auto;max-height:calc(100vh - 150px);filter:drop-shadow(0 22px 40px rgba(0,0,0,.35))}
+  .build .eyebrow2{color:var(--acento);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;margin-bottom:16px}
+  .build .pasos{display:grid}
+  .build .paso{grid-area:1/1;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+  .build .paso.activo{opacity:1;transform:none;pointer-events:auto}
+  .build .num{display:block;color:rgba(255,255,255,.5);font-weight:700;font-size:.85rem;letter-spacing:.1em;margin-bottom:10px}
+  .build .paso h2{color:#fff;font-size:clamp(2rem,4.4vw,3.3rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px}
+  .build .paso p{color:rgba(255,255,255,.78);font-size:1.1rem;max-width:32ch}
+  .build .paso .btn{margin-top:22px}
+  .build .puntos{display:flex;gap:8px;margin-top:30px}
+  .build .puntos i{width:30px;height:4px;border-radius:4px;background:rgba(255,255,255,.2);transition:background .4s ease}
+  .build .puntos i.on{background:var(--acento)}
+  .build .pista{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.6);font-size:.85rem;letter-spacing:.04em;transition:opacity .3s ease}
+  .build.estatico{height:auto}
+  .build.estatico .stage{position:relative;top:0;height:auto;padding:64px 0}
+  @media(max-width:860px){
+    .build .stage-in{grid-template-columns:1fr;gap:10px;align-content:center}
+    .build .escena-svg{order:1;max-height:44vh}
+    .build .textos{order:2}
+    .build .paso h2{font-size:clamp(1.7rem,7vw,2.2rem)}
+    .build .paso p{font-size:1rem}
+    .build .puntos{margin-top:18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap barra">
+    <a class="marca" href="#inicio" aria-label="Suginsa, Suministros Generales e Industriales, S.A. - Inicio">
+      <!-- Guardar el logo como img/logo.png. Si el archivo no existe, se muestra el nombre en texto. -->
+      <img src="img/logo.png" alt="Suginsa - Suministros Generales e Industriales, S.A." onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <!-- Logo de respaldo en SVG: se muestra solo si img/logo.png no existe -->
+      <svg class="marca-svg" style="display:none" viewBox="0 0 300 118" role="img" aria-label="Suginsa - Suministros Generales e Industriales, S.A." xmlns="http://www.w3.org/2000/svg">
+        <path d="M106 14 H126 A15 15 0 0 1 126 44 H106 Z" fill="none" stroke="#a6a6a6" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M134 2 H150 Q158 2 158 10 V32 H134 A15 15 0 0 1 134 2 Z" fill="none" stroke="#1b3563" stroke-width="5" stroke-linejoin="round"/>
+        <text x="0" y="90" textLength="300" lengthAdjust="spacingAndGlyphs" font-family="'Arial Black','Segoe UI',Arial,sans-serif" font-weight="900" font-size="50" fill="#1b3563">SUGINSA</text>
+        <text x="0" y="112" textLength="300" lengthAdjust="spacingAndGlyphs" font-family="'Segoe UI',Arial,sans-serif" font-weight="700" font-size="11" fill="#8f8f8f">Suministros Generales e Industriales, S.A.</text>
+      </svg>
+    </a>
+    <nav>
+      <a class="enlace" href="#proceso">Proceso</a>
+      <a class="enlace" href="#servicios">Servicios</a>
+      <a class="enlace" href="#productos">Productos</a>
+      <a class="enlace" href="#nosotros">Nosotros</a>
+      <a class="enlace" href="#trabajos">Trabajos</a>
+      <a class="btn btn-acento" href="#contacto" style="padding:9px 18px;opacity:1">Solicitar servicio</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- PORTADA -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Suministros Generales e Industriales, S.A.</p>
+      <h1>Instalaciones <span>seguras, protegidas</span> y duraderas</h1>
+      <p>Suministros, instalación, reparación y mantenimiento hechos para durar años. Para personas y para empresas.</p>
+      <div class="acciones">
+        <a class="btn btn-acento" href="#contacto">Solicitar servicio</a>
+        <a class="btn btn-borde" id="btnWaHero" href="#" target="_blank" rel="noopener" hidden>Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTADOR REAL -->
+  <div class="contador">
+    <div class="wrap">
+      <div class="numero" id="contador" aria-live="polite">0</div>
+      <div class="etiqueta"><strong>instalaciones realizadas</strong>y sumando con cada trabajo cumplido</div>
+    </div>
+  </div>
+
+  <!-- CÓMO TRABAJAMOS: animación de construcción controlada por el scroll -->
+  <section class="build" id="proceso" aria-label="Cómo construimos, paso a paso">
+    <div class="stage">
+      <div class="stage-in wrap">
+        <div class="textos">
+          <p class="eyebrow2">Cómo trabajamos</p>
+          <div class="pasos">
+            <div class="paso activo">
+              <span class="num">01 / 05</span>
+              <h2>Cimientos firmes</h2>
+              <p>Todo trabajo duradero empieza por una buena base.</p>
+            </div>
+            <div class="paso">
+              <span class="num">02 / 05</span>
+              <h2>Estructura segura</h2>
+              <p>Armamos cada pieza con cuidado, nivel por nivel.</p>
+            </div>
+            <div class="paso">
+              <span class="num">03 / 05</span>
+              <h2>Protección en cada piso</h2>
+              <p>Refuerzos y cerramientos pensados para proteger.</p>
+            </div>
+            <div class="paso">
+              <span class="num">04 / 05</span>
+              <h2>Instalaciones que duran</h2>
+              <p>Cada detalle se instala para funcionar durante años.</p>
+            </div>
+            <div class="paso">
+              <span class="num">05 / 05</span>
+              <h2>Tu oficina, lista</h2>
+              <p>Segura, protegida y hecha para durar años.</p>
+              <a class="btn btn-acento" href="#contacto">Solicitar servicio</a>
+            </div>
+          </div>
+          <div class="puntos" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <svg class="escena-svg" viewBox="0 0 800 520" preserveAspectRatio="xMidYMid meet" role="img"
+             aria-label="Animación: una estructura que se va armando hasta convertirse en una oficina" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="rejilla" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="1"/>
+            </pattern>
+            <radialGradient id="brillo">
+              <stop offset="0" stop-color="#ffd98a" stop-opacity=".38"/>
+              <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g id="escena"></g>
+        </svg>
+      </div>
+      <div class="pista">Desliza para construir ↓</div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="fondo">
+    <div class="wrap">
+      <h2>Nuestros servicios</h2>
+      <p class="sub">Cada trabajo se hace pensando en la seguridad y en que dure.</p>
+      <div class="grid3">
+        <article class="tarjeta">
+          <span class="etiqueta-tipo">Personas y empresas</span>
+          <h3>Instalación</h3>
+          <div class="pendiente">Descripción del servicio de instalación</div>
+        </article>
+        <article class="tarjeta">
+          <span class="etiqueta-tipo">Personas y empresas</span>
+          <h3>Reparación</h3>
+          <div class="pendiente">Descripción del servicio de reparación</div>
+        </article>
+        <article class="tarjeta">
+          <span class="etiqueta-tipo">Personas y empresas</span>
+          <h3>Mantenimiento</h3>
+          <div class="pendiente">Descripción del servicio de mantenimiento</div>
+        </article>
+        <article class="tarjeta">
+          <span class="etiqueta-tipo">Personas y empresas</span>
+          <h3>Suministros</h3>
+          <div class="pendiente">Descripción del servicio de suministros</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS Y SUMINISTROS -->
+  <section id="productos">
+    <div class="wrap">
+      <h2>Productos y suministros</h2>
+      <p class="sub">Suministros generales e industriales para empresas y particulares.</p>
+      <div class="categorias">
+        <div class="pendiente">Categoría de productos 1</div>
+        <div class="pendiente">Categoría de productos 2</div>
+        <div class="pendiente">Categoría de productos 3</div>
+        <div class="pendiente">Categoría de productos 4</div>
+        <div class="pendiente">Categoría de productos 5</div>
+        <div class="pendiente">Categoría de productos 6</div>
+      </div>
+      <p style="margin-top:24px"><a class="btn btn-acento" href="#contacto">Pedir cotización</a></p>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="fondo">
+    <div class="wrap">
+      <h2>¿Por qué elegir Suginsa?</h2>
+      <p class="sub">Lo que cuidamos en cada trabajo.</p>
+      <div class="porque">
+        <div class="item"><h3>Seguras</h3><p>Instalaciones pensadas para cuidar a las personas y sus bienes.</p></div>
+        <div class="item"><h3>Protegidas</h3><p>Trabajos hechos con criterios de protección.</p></div>
+        <div class="item"><h3>Duraderas</h3><p>Hechas para durar años, no para salir del paso.</p></div>
+        <div class="item"><h3>Para todos</h3><p>Atendemos a personas y a empresas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros">
+    <div class="wrap">
+      <h2>Sobre Suginsa</h2>
+      <p class="sub">Suministros Generales e Industriales, S.A. Quiénes somos y por qué confiar en nuestro trabajo.</p>
+      <div class="dos">
+        <div class="pendiente">Historia de la empresa</div>
+        <div class="pendiente">Año de fundación y años de experiencia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRABAJOS QUE PERDURAN -->
+  <section id="trabajos" class="fondo">
+    <div class="wrap">
+      <h2>Trabajos que perduran</h2>
+      <p class="sub">Instalaciones hechas hace años que siguen funcionando.</p>
+      <div class="galeria" id="galeria"></div>
+    </div>
+  </section>
+
+  <!-- GARANTÍA -->
+  <section class="garantia">
+    <div class="wrap">
+      <h2>Nuestra garantía</h2>
+      <p class="sub">Respaldamos cada trabajo.</p>
+      <div class="pendiente">Condiciones de la garantía (tiempo y qué cubre)</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="fondo">
+    <div class="wrap">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <p class="sub">Opiniones de clientes reales.</p>
+      <div class="grid3">
+        <div class="pendiente">Testimonio de cliente 1</div>
+        <div class="pendiente">Testimonio de cliente 2</div>
+        <div class="pendiente">Testimonio de cliente 3</div>
+      </div>
+      <h2 style="margin-top:56px">Marcas que manejamos y clientes</h2>
+      <p class="sub">Con quién trabajamos.</p>
+      <div class="marcas">
+        <div class="pendiente">Logo de marca o cliente</div>
+        <div class="pendiente">Logo de marca o cliente</div>
+        <div class="pendiente">Logo de marca o cliente</div>
+        <div class="pendiente">Logo de marca o cliente</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <h2>Solicita tu servicio</h2>
+      <p class="sub">Cuéntanos qué necesitas y te contactamos.</p>
+      <div class="contacto-grid">
+
+        <form id="formulario" novalidate>
+          <div>
+            <label>Soy</label>
+            <div class="opciones">
+              <label><input type="radio" name="tipo" value="Persona" checked> Persona</label>
+              <label><input type="radio" name="tipo" value="Empresa"> Empresa</label>
+            </div>
+          </div>
+          <div class="fila">
+            <div>
+              <label for="nombre">Nombre o empresa *</label>
+              <input id="nombre" name="nombre" maxlength="100" required autocomplete="name">
+            </div>
+            <div>
+              <label for="telefono">Teléfono / WhatsApp *</label>
+              <input id="telefono" name="telefono" type="tel" maxlength="30" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="fila">
+            <div>
+              <label for="servicio">Servicio *</label>
+              <select id="servicio" name="servicio" required>
+                <option value="">Elige una opción</option>
+                <option>Instalación</option>
+                <option>Reparación</option>
+                <option>Mantenimiento</option>
+                <option>Suministros / cotización</option>
+              </select>
+            </div>
+            <div>
+              <label for="zona">Zona o dirección</label>
+              <input id="zona" name="zona" maxlength="150" placeholder="Ej: San Miguelito">
+            </div>
+          </div>
+          <div>
+            <label for="correo">Correo (opcional)</label>
+            <input id="correo" name="correo" type="email" maxlength="100" autocomplete="email">
+          </div>
+          <div>
+            <label for="descripcion">¿Qué necesitas? *</label>
+            <textarea id="descripcion" name="descripcion" maxlength="1000" required></textarea>
+          </div>
+          <!-- Campo trampa contra spam: los robots lo llenan, las personas no lo ven -->
+          <div class="trampa" aria-hidden="true">
+            <label>No llenar <input name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button class="btn btn-acento" type="submit" id="enviar">Enviar solicitud</button>
+          <p id="mensaje" role="status"></p>
+        </form>
+
+        <aside class="datos" id="datos"></aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="anio"></span> Suministros Generales e Industriales, S.A. (Suginsa). Todos los derechos reservados.</span>
+    <span>Instalaciones seguras, protegidas y duraderas.</span>
+  </div>
+</footer>
+
+<a class="wa" id="btnWa" href="#" target="_blank" rel="noopener" hidden>WhatsApp</a>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="cerrar" aria-label="Cerrar">×</button>
+  <img alt="">
+  <p></p>
+</div>
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN: aquí se llena la información que falta.
+   Todo lo que quede vacío ("") se muestra como recuadro pendiente.
+   ============================================================ */
+const CONFIG = {
+  whatsapp: "",       // Formato internacional, sin + ni espacios. Ej: 50761234567
+  telefono: "",       // Ej: "+507 6123-4567"
+  correo: "",         // Ej: "contacto@suginsa.com"
+  direccion: "",      // Dirección o zonas que cubren
+  horario: "",        // Ej: "Lunes a viernes, 8:00 a.m. - 5:00 p.m."
+  contadorURL: "",    // URL de la aplicación web de Google Apps Script (ver apps-script.gs)
+  formularioURL: "",  // La misma URL de arriba
+  galeria: [
+    // Cuando haya fotos: { src: "img/obra1.jpg", anio: "2019", texto: "Descripción corta" }
+    { src: "", anio: "", texto: "" },
+    { src: "", anio: "", texto: "" },
+    { src: "", anio: "", texto: "" },
+    { src: "", anio: "", texto: "" },
+    { src: "", anio: "", texto: "" },
+    { src: "", anio: "", texto: "" }
+  ]
+};
+
+/* ---------- Año del pie ---------- */
+document.getElementById("anio").textContent = new Date().getFullYear();
+
+/* ---------- WhatsApp ---------- */
+const urlWa = CONFIG.whatsapp
+  ? "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Hola, quiero información sobre sus servicios.")
+  : "";
+if (urlWa) {
+  ["btnWa", "btnWaHero"].forEach(function (id) {
+    const el = document.getElementById(id);
+    el.href = urlWa;
+    el.hidden = false;
+  });
+}
+
+/* ---------- Datos de contacto ---------- */
+(function () {
+  const items = [
+    ["WhatsApp", CONFIG.whatsapp ? "+" + CONFIG.whatsapp : ""],
+    ["Teléfono", CONFIG.telefono],
+    ["Correo", CONFIG.correo],
+    ["Dirección / zonas", CONFIG.direccion],
+    ["Horario de atención", CONFIG.horario]
+  ];
+  const cont = document.getElementById("datos");
+  items.forEach(function (it) {
+    const d = document.createElement("div");
+    d.className = "dato" + (it[1] ? "" : " vacio");
+    const b = document.createElement("b");
+    b.textContent = it[0];
+    const s = document.createElement("span");
+    s.textContent = it[1] || "Dato de la empresa";
+    d.appendChild(b);
+    d.appendChild(s);
+    cont.appendChild(d);
+  });
+})();
+
+/* ---------- Contador de instalaciones (real) ---------- */
+(async function () {
+  const el = document.getElementById("contador");
+  let total = 0;
+  if (CONFIG.contadorURL) {
+    try {
+      const r = await fetch(CONFIG.contadorURL);
+      const d = await r.json();
+      total = Number(d.completadas) || 0;
+    } catch (e) { /* si falla, se queda en 0 */ }
+  }
+  const duracion = 1200, inicio = performance.now();
+  function paso(t) {
+    const p = Math.min((t - inicio) / duracion, 1);
+    el.textContent = "+" + Math.round(total * p).toLocaleString("es-PA");
+    if (p < 1) requestAnimationFrame(paso);
+  }
+  if (total > 0) requestAnimationFrame(paso); else el.textContent = "0";
+})();
+
+/* ---------- Galería ---------- */
+const lb = document.getElementById("lightbox");
+(function () {
+  const cont = document.getElementById("galeria");
+  CONFIG.galeria.forEach(function (g) {
+    const fig = document.createElement("figure");
+    if (g.src) {
+      fig.className = "foto";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      const img = document.createElement("img");
+      img.src = g.src;
+      img.loading = "lazy";
+      img.alt = g.texto || "Trabajo realizado por Suginsa";
+      btn.appendChild(img);
+      btn.addEventListener("click", function () {
+        lb.querySelector("img").src = g.src;
+        lb.querySelector("img").alt = img.alt;
+        lb.querySelector("p").textContent = (g.anio ? "Instalado en " + g.anio + " · " : "") + (g.texto || "");
+        lb.hidden = false;
+      });
+      fig.appendChild(btn);
+      const cap = document.createElement("figcaption");
+      cap.innerHTML = "<strong></strong> <span></span>";
+      cap.querySelector("strong").textContent = g.anio ? "Instalado en " + g.anio + "." : "";
+      cap.querySelector("span").textContent = g.texto ? g.texto : "";
+      fig.appendChild(cap);
+    } else {
+      fig.className = "foto vacia";
+      const p = document.createElement("div");
+      p.className = "pendiente";
+      p.textContent = "Foto de trabajo · año de instalación";
+      fig.appendChild(p);
+    }
+    cont.appendChild(fig);
+  });
+})();
+lb.addEventListener("click", function (e) {
+  if (e.target === lb || e.target.classList.contains("cerrar")) lb.hidden = true;
+});
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.hidden = true; });
+
+/* ---------- Formulario ---------- */
+(function () {
+  const form = document.getElementById("formulario");
+  const msg = document.getElementById("mensaje");
+  const btn = document.getElementById("enviar");
+
+  function mostrar(texto, clase) { msg.textContent = texto; msg.className = clase; }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (form.website.value) return;                       // robot detectado
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    if (!CONFIG.formularioURL) {
+      mostrar("Modo demostración: el formulario todavía no está conectado.", "aviso");
+      return;
+    }
+
+    btn.disabled = true;
+    mostrar("Enviando...", "");
+    const datos = new URLSearchParams();
+    ["tipo", "nombre", "telefono", "servicio", "zona", "correo", "descripcion"].forEach(function (k) {
+      datos.append(k, form.elements[k].value);
+    });
+    try {
+      await fetch(CONFIG.formularioURL, { method: "POST", mode: "no-cors", body: datos });
+      mostrar("¡Solicitud enviada! Te contactaremos pronto.", "ok");
+      form.reset();
+    } catch (err) {
+      mostrar("No se pudo enviar. Inténtalo de nuevo" + (CONFIG.whatsapp ? " o escríbenos por WhatsApp." : "."), "error");
+    }
+    btn.disabled = false;
+  });
+})();
+
+/* ---------- Retoques: sombra del encabezado y aparición suave ---------- */
+(function () {
+  const cab = document.querySelector("header");
+  function sombra() { cab.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", sombra, { passive: true });
+  sombra();
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (x) {
+      if (x.isIntersecting) { x.target.classList.add("visto"); io.unobserve(x.target); }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll("section:not(.build):not(.hero) > .wrap > *").forEach(function (el) {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
+
+/* ---------- Animación: la estructura se arma con el scroll y termina en una oficina ---------- */
+(function () {
+  const seccion = document.getElementById("proceso");
+  const escena = document.getElementById("escena");
+  if (!seccion || !escena) return;
+
+  const NS = "http://www.w3.org/2000/svg";
+  const partes = [];
+  const AZ = "#cfe0f5", AC = "#6f87a8", SU = "#9fb4cf";
+
+  function mk(tag, at, padre) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in at) e.setAttribute(k, at[k]);
+    (padre || escena).appendChild(e);
+    return e;
+  }
+  // fx: "draw" (se dibuja el trazo), "fade" (aparece), "rise" (sube y aparece)
+  // s/e: tramo del scroll (0 a 1). out: tramo en el que desaparece. f: opacidad máxima del relleno.
+  function add(el, fx, s, e, o) { partes.push(Object.assign({ el: el, fx: fx, s: s, e: e, len: null }, o || {})); }
+  function L(x1, y1, x2, y2, extra) {
+    return mk("line", Object.assign({ x1: x1, y1: y1, x2: x2, y2: y2, stroke: AC, "stroke-width": 3, fill: "none", "stroke-linecap": "round" }, extra || {}));
+  }
+
+  /* Fondo y suelo */
+  add(mk("ellipse", { cx: 400, cy: 330, rx: 330, ry: 210, fill: "url(#brillo)" }), "fade", 0.88, 1);
+  add(mk("rect", { x: 0, y: 0, width: 800, height: 520, fill: "url(#rejilla)" }), "fade", 0, 0.08);
+  add(L(40, 440, 760, 440, { stroke: SU }), "draw", 0, 0.08);
+  add(mk("rect", { x: 210, y: 440, width: 380, height: 24, stroke: SU, "stroke-width": 3, fill: SU }), "draw", 0.04, 0.14, { f: 0.3 });
+
+  /* Grúa (aparece al inicio y se retira al final) */
+  const sale = [0.8, 0.93];
+  add(L(684, 440, 684, 90), "draw", 0.02, 0.12, { out: sale });
+  add(L(696, 440, 696, 90), "draw", 0.03, 0.13, { out: sale });
+  let d = "M684 440";
+  for (let i = 1; i <= 12; i++) d += " L" + (i % 2 ? 696 : 684) + " " + (440 - i * 350 / 12).toFixed(1);
+  add(mk("path", { d: d, stroke: AC, "stroke-width": 2, fill: "none", "stroke-linejoin": "round" }), "draw", 0.05, 0.14, { out: sale });
+  add(L(400, 90, 775, 90, { "stroke-width": 5 }), "draw", 0.1, 0.17, { out: sale });
+  add(mk("polyline", { points: "684,90 690,48 696,90", stroke: AC, "stroke-width": 3, fill: "none", "stroke-linejoin": "round" }), "draw", 0.1, 0.15, { out: sale });
+  add(L(690, 48, 440, 90, { "stroke-width": 2 }), "draw", 0.12, 0.18, { out: sale });
+  add(L(690, 48, 768, 90, { "stroke-width": 2 }), "draw", 0.12, 0.18, { out: sale });
+  add(mk("rect", { x: 744, y: 93, width: 26, height: 24, fill: AC, stroke: AC }), "fade", 0.12, 0.18, { out: sale });
+
+  const gancho = mk("g", {});
+  const carro = mk("rect", { x: 492, y: 86, width: 16, height: 8, rx: 2, fill: AZ }, gancho);
+  const cable = mk("line", { x1: 500, y1: 94, x2: 500, y2: 150, stroke: AC, "stroke-width": 2 }, gancho);
+  const viga = mk("rect", { x: 475, y: 150, width: 50, height: 7, rx: 2, fill: AZ }, gancho);
+  add(gancho, "fade", 0.12, 0.18, { out: sale });
+  function moverGancho(p) {
+    const x = 500 + 110 * Math.sin(p * 13);
+    const y = 130 + 55 * (0.5 + 0.5 * Math.cos(p * 8.5));
+    carro.setAttribute("x", x - 8);
+    cable.setAttribute("x1", x); cable.setAttribute("x2", x); cable.setAttribute("y2", y);
+    viga.setAttribute("x", x - 25); viga.setAttribute("y", y);
+  }
+
+  /* Estructura: columnas, vigas, losas y arriostres */
+  [220, 310, 400, 490, 580].forEach(function (x, i) {
+    add(L(x, 440, x, 200, { stroke: AZ, "stroke-width": 4 }), "draw", 0.12 + i * 0.03, 0.24 + i * 0.03);
+  });
+  [360, 280, 200].forEach(function (y, i) {
+    add(L(220, y, 580, y, { stroke: AZ, "stroke-width": 4 }), "draw", 0.26 + i * 0.04, 0.36 + i * 0.04);
+  });
+  [360, 280, 200].forEach(function (y, i) {
+    add(mk("rect", { x: 214, y: y - 6, width: 372, height: 12, rx: 2, stroke: SU, "stroke-width": 2, fill: SU }), "draw", 0.34 + i * 0.04, 0.44 + i * 0.04, { f: 0.5 });
+  });
+  for (let f = 0; f < 3; f++) {
+    const yb = 440 - 80 * f, yt = yb - 80;
+    [[220, 310], [490, 580]].forEach(function (b) {
+      add(L(b[0], yb, b[1], yt, { "stroke-width": 2 }), "draw", 0.3 + f * 0.05, 0.4 + f * 0.05);
+      add(L(b[1], yb, b[0], yt, { "stroke-width": 2 }), "draw", 0.32 + f * 0.05, 0.42 + f * 0.05);
+    });
+  }
+
+  /* Fachada de vidrio, oficinas por dentro y puerta */
+  let n = 0;
+  for (let f = 0; f < 3; f++) {
+    const yt = 360 - 80 * f;
+    for (let b = 0; b < 4; b++) {
+      const x = 220 + 90 * b + 6, y = yt + 8;
+      if (f === 0 && b === 1) continue; // aquí va la puerta
+      add(mk("rect", { x: x, y: y, width: 78, height: 66, rx: 3, fill: "rgba(120,180,255,.26)", stroke: "rgba(190,220,255,.75)", "stroke-width": 1.5 }),
+          "fade", 0.56 + n * 0.012, 0.64 + n * 0.012);
+      const g = mk("g", {});
+      mk("rect", { x: x, y: y, width: 78, height: 66, rx: 3, fill: "rgba(255,214,120,.2)" }, g);
+      mk("rect", { x: x + 8, y: y + 50, width: 62, height: 4, rx: 1, fill: AZ }, g);        // escritorio
+      mk("rect", { x: x + 27, y: y + 36, width: 24, height: 14, rx: 1.5, fill: "#ffd98a" }, g); // pantalla
+      mk("rect", { x: x + 37, y: y + 50, width: 4, height: 0.1, fill: AZ }, g);
+      mk("circle", { cx: x + 12, cy: y + 14, r: 3, fill: "#ffe9b8" }, g);                    // lámpara
+      add(g, "fade", 0.76 + n * 0.01, 0.86 + n * 0.01);
+      n++;
+    }
+  }
+  const puerta = mk("g", {});
+  mk("rect", { x: 325, y: 384, width: 50, height: 56, rx: 2, fill: "rgba(120,180,255,.3)", stroke: "rgba(190,220,255,.85)", "stroke-width": 2 }, puerta);
+  mk("line", { x1: 350, y1: 384, x2: 350, y2: 440, stroke: "rgba(190,220,255,.85)", "stroke-width": 1.5 }, puerta);
+  mk("circle", { cx: 344, cy: 414, r: 2, fill: "#ffd98a" }, puerta);
+  add(puerta, "fade", 0.62, 0.7);
+
+  /* Azotea: equipos, antena y letrero */
+  [[235, 24], [519, 24]].forEach(function (a, i) {
+    const g = mk("g", {});
+    mk("rect", { x: a[0], y: 176, width: 46, height: a[1], rx: 2, fill: AC }, g);
+    mk("line", { x1: a[0] + 8, y1: 182, x2: a[0] + 38, y2: 182, stroke: "#0d1d3a", "stroke-width": 2 }, g);
+    mk("line", { x1: a[0] + 8, y1: 190, x2: a[0] + 38, y2: 190, stroke: "#0d1d3a", "stroke-width": 2 }, g);
+    add(g, "rise", 0.78 + i * 0.03, 0.86 + i * 0.03);
+  });
+  const antena = mk("g", {});
+  mk("line", { x1: 296, y1: 194, x2: 296, y2: 146, stroke: AZ, "stroke-width": 3 }, antena);
+  mk("circle", { cx: 296, cy: 144, r: 4, fill: "#ffd98a" }, antena);
+  add(antena, "rise", 0.8, 0.88);
+  const letrero = mk("g", {});
+  mk("rect", { x: 310, y: 158, width: 180, height: 36, rx: 5, fill: "#1b3563", stroke: "#ffffff", "stroke-width": 2 }, letrero);
+  const txt = mk("text", { x: 400, y: 183, "text-anchor": "middle", "font-size": 22, "font-weight": 900, fill: "#ffffff",
+                           "font-family": "'Arial Black','Segoe UI',Arial,sans-serif", "letter-spacing": 2 }, letrero);
+  txt.textContent = "SUGINSA";
+  add(letrero, "rise", 0.84, 0.94);
+
+  /* Arbustos */
+  [185, 620].forEach(function (cx, i) {
+    add(mk("ellipse", { cx: cx, cy: 431, rx: 17, ry: 12, fill: "#4d8f6a" }), "rise", 0.9 + i * 0.02, 0.98 + i * 0.02);
+  });
+
+  /* ---- Dibujo según el progreso ---- */
+  const clamp = function (v) { return Math.max(0, Math.min(1, v)); };
+  function render(p) {
+    partes.forEach(function (q) {
+      const t = clamp((p - q.s) / (q.e - q.s));
+      const o = q.out ? clamp((p - q.out[0]) / (q.out[1] - q.out[0])) : 0;
+      const vis = 1 - o, el = q.el;
+      if (q.fx === "draw") {
+        if (q.len === null) {
+          try { q.len = el.getTotalLength(); } catch (err) { q.len = 1000; }
+          el.style.strokeDasharray = q.len;
+        }
+        el.style.strokeDashoffset = q.len * (1 - t);
+        el.style.opacity = t > 0 ? vis : 0;
+        if (q.f !== undefined) el.style.fillOpacity = q.f * clamp((t - 0.45) / 0.55);
+      } else if (q.fx === "rise") {
+        el.style.opacity = t * vis;
+        el.style.transform = "translateY(" + ((1 - t) * 26) + "px)";
+      } else {
+        el.style.opacity = t * vis;
+      }
+    });
+    moverGancho(p);
+  }
+
+  /* ---- Textos, puntos y pista ---- */
+  const pasos = [].slice.call(seccion.querySelectorAll(".paso"));
+  const puntos = [].slice.call(seccion.querySelectorAll(".puntos i"));
+  const pista = seccion.querySelector(".pista");
+  const limites = [0, 0.14, 0.36, 0.56, 0.76];
+  function ui(p) {
+    let idx = 0;
+    limites.forEach(function (l, i) { if (p >= l) idx = i; });
+    pasos.forEach(function (e, i) { e.classList.toggle("activo", i === idx); });
+    puntos.forEach(function (e, i) { e.classList.toggle("on", i <= idx); });
+    if (pista) pista.style.opacity = p < 0.03 ? 1 : 0;
+  }
+
+  /* ---- Sin animaciones: se muestra la oficina terminada ---- */
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    seccion.classList.add("estatico");
+    render(1);
+    pasos.forEach(function (e, i) { e.classList.toggle("activo", i === pasos.length - 1); });
+    puntos.forEach(function (e) { e.classList.add("on"); });
+    if (pista) pista.style.display = "none";
+    return;
+  }
+
+  /* ---- Scroll suave (como las webs de Apple o Bambu Lab) ---- */
+  const ALTO_CAB = 76;
+  let objetivo = 0, actual = 0, corriendo = false;
+  function medir() {
+    const r = seccion.getBoundingClientRect();
+    const recorrido = r.height - (window.innerHeight - ALTO_CAB);
+    objetivo = clamp((ALTO_CAB - r.top) / Math.max(recorrido, 1));
+  }
+  function bucle() {
+    actual += (objetivo - actual) * 0.14;
+    if (Math.abs(objetivo - actual) < 0.0004) actual = objetivo;
+    render(actual);
+    ui(actual);
+    if (actual !== objetivo) requestAnimationFrame(bucle); else corriendo = false;
+  }
+  function pedir() {
+    medir();
+    if (!corriendo) { corriendo = true; requestAnimationFrame(bucle); }
+  }
+  window.addEventListener("scroll", pedir, { passive: true });
+  window.addEventListener("resize", pedir);
+  medir();
+  actual = objetivo;
+  render(actual);
+  ui(actual);
+})();
+</script>
+</body>
+</html>
